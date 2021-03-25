@@ -1,1 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <title>&lrm;</title>
+
+    <link
+      rel="icon"
+      href="https://cdn.glitch.com/7a0ccdc4-c1ce-4436-9ae3-3e02aea48859%2Ftransparent.png?v=1616528519253"
+    />
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="/newgame.js" defer></script>
+    <script src="/vue.js" defer></script>
+    <script src="/newvue.js" defer></script>
+    <script src="/game.js" defer></script>
+    <script src="/saveload.js" defer></script>
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <div v-show="!unlocked(0)">
+        <h1 class="endMessage endMessage1">
+          <span>??? ????</span>
+        </h1>
+        <h1 class="endMessage endMessage2">
+          <span>?????? ??? ????????</span>
+        </h1>
+        <h1 class="endMessage endMessage3">
+          <span>???? ??? ?? ????? ????? ????</span>
+        </h1>
+        <h1 class="endMessage endMessage4">
+          <span>???? ?? ??????? ???</span>
+        </h1>
+      </div>
+      <div v-show="unlocked(0)">
+        <h1>??? Incremental</h1>
+        <p>
+          You have ??? ???.
+        </p>
+        <p>
+          You are gaining ??? ??? per ???.
+        </p>
+        <button v-on:click="click()">
+          Gain ??? ???
+        </button>
+        <br v-show="unlocked(1)" />
+        <button v-show="unlocked(1)" v-on:click="buy(1)">
+          Buy ???<br />
+          Cost: ??? ???
+        </button>
+        <button v-show="unlocked(2)" v-on:click="buy(2)">
+          Buy ???<br />
+          Cost: ??? ???
+        </button>
+        <button v-show="unlocked(3)" v-on:click="buy(3)">
+          Buy ???<br />
+          Cost: ??? ???
+        </button>
+        <br v-show="unlocked(4)" />
+        <button v-show="unlocked(4)" v-on:click="buy(4)">
+          Buy ???<br />
+          Cost: ??? ???
+        </button>
+        <button v-show="unlocked(5)" v-on:click="buy(5)">
+          Buy ???<br />
+          Cost: ??? ???
+        </button>
+        <button v-show="unlocked(6)" v-on:click="buy(6)">
+          Buy ???<br />
+          Cost: ??? ???
+        </button>
+        <br v-show="unlocked(7)" />
+        <button v-show="unlocked(7)" v-on:click="buy(7)">
+          Buy ???<br />
+          Cost: ??? ???
+        </button>
+        <button v-show="unlocked(8)" v-on:click="buy(8)">
+          Buy ???<br />
+          Cost: ??? ???
+        </button>
+        <button v-show="unlocked(9)" v-on:click="buy(9)">
+          Buy ???<br />
+          Cost: ??? ???
+        </button>
+        <br v-show="unlocked(10)" />
+        <button v-show="unlocked(10)" v-on:click="buy(10)">
+          Win the game<br />
+          Cost: ??? ???
+        </button>
+        <br />
+        <button v-on:click="save()">
+          Save
+        </button>
+        <br />
+        <button v-on:click="reset()">
+          <b>HARD RESET</b>
+        </button>
+      </div>
+      <p>
+        Made by ???. Join my Discord:
+        <a href="https://discord.gg/vdYDc76RKH" target="_blank">???</a>!
+      </p>
+      <button v-show="!unlocked(0)" v-on:click="reset">
+        start over (what are you, a masochist?)<br>
+        P.S. Take a screenshot of the final game screen <br>
+        to get a special role in my Discord server
+      </button>
+      <p style="display: none">
+          {{ game.content?.[0] }} content[0] <br />
+          {{ game.content?.[1] }} content[1], next costs {{ getCost(1) }}
+          content[0] <br />
+          {{ game.content?.[2] }} content[2], next costs {{ getCost(2) }}
+          content[1] <br />
+          {{ game.content?.[3] }} content[3], next costs idk lmaooo it's random
+          content[2] <br />
+          {{ game.content?.[4] }} content[4], next costs {{ getCost(4) }}
+          content[3] <br />
+          {{ game.content?.[5] }} content[5], next costs {{ getCost(5) }}
+          content[4] <br />
+          {{ game.content?.[6] }} content[6], next costs {{ getCost(6) }}
+          content[5] <br />
+          {{ game.content?.[7] }} content[7], next costs {{ getCost(7) }}
+          content[6] <br />
+          {{ game.content?.[8] }} content[8], next costs {{ getCost(8) }}
+          content[7] <br />
+          {{ game.content?.[9] }} content[9], next costs {{ getCost(9) }}
+          content[8] <br />
+        </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+body {
+  transition-duration: 20s;
+  font-family: courier, verdana, arial, sans-serif;
+  font-size: 15pt;
+  text-align: center;
+  height: 100%;
+  color: white;
+  cursor: default;
+  background-color: black;
+}
+
+p {
+  transition-duration: 20s;
+  color: black;
+}
+
+p:hover {
+  transition-duration: 5s;
+  color: white;
+}
+
+a {
+  transition-duration: 20s;
+  color: black;
+}
+
+a:hover {
+  transition-duration: 5s;
+  color: white;
+}
+
+h1 {
+  transition-duration: 20s;
+  font-style: bold;
+  color: black;
+}
+
+h1:hover {
+  transition-duration: 5s;
+  color: white;
+}
+
+html, .full-height {
+  height: 100%;
+}
+
+button {
+  font-family: courier, verdana, arial, sans-serif;
+  font-size: 15pt;
+  transition-duration: 20s;
+  text-align: center;
+  color: black;
+  width: auto;
+  background-color: #000000;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px 5px;
+  margin: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+button:hover {
+  transition-duration: 5s;
+  color: white;
+  text-align: center;
+  width: auto;
+  background-color: #000000;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 5px 5px;
+  margin: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+
+.endMessage:hover span {
+  display: none;
+}
+
+.endMessage1:hover:before {
+  content: "YOU WON!";
+}
+
+.endMessage2:hover:before {
+  content: "THANKS FOR PLAYING!";
+}
+
+.endMessage3:hover:before {
+  content: "THIS WAS AN APRIL FOOLS JOKE";
+}
+
+.endMessage4:hover:before {
+  content: "JOIN MY DISCORD THO";
+}
